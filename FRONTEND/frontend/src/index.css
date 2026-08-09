@@ -53,6 +53,7 @@ form textarea {
 }
 
 .post-card {
+  flex-shrink: 0;
   background-color: red;
   height: 45%;
   width: 80%;
