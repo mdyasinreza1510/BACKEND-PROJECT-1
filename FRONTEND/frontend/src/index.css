@@ -46,7 +46,9 @@ form textarea {
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 
 }
 
@@ -57,9 +59,11 @@ form textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px 10px 0px 10px;
 }
 
 .post-card img {
+  margin-bottom: 10px;
   height: 200px;
-  width: 200px;
+  width: 100%;;
 }

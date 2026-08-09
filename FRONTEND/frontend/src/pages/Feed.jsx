@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 
 export const Feed = () => {
 
@@ -11,6 +12,21 @@ export const Feed = () => {
         
         }
     ]);
+//axios frontend ko backend se connect krta hai
+useEffect(()=>{
+    //yaha hmne localhost:3000 pr jo get api hai "getpost" uska data lee rhe hain backend se aur aur aur ye jo data hai wo sb hamare DB se save hain "
+axios.get("http://localhost:3000/getPost")
+.then((res) =>{
+    console.log(res.data)
+    setpost(res.data.post)
+
+})
+//jis get api k zariya ham get method use krrr rhe hainusa link dalna hoga 
+
+},[])
+
+
+
   return (
     <section className='feed-section'>
         {

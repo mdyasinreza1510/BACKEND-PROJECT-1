@@ -3,10 +3,13 @@ const express=require('express');
 const multer=require('multer');//to acces the form-data format
 
 const postmodel= require('./models/post.model');
+const cors = require ('cors')
 
 const uploadFile= require("./services/storage.service")
 
 const app=express();
+
+app.use(cors())
 
 app.use(express.json());//this middleware is used only for raw typedata we use another middle to acces imageas and etc
 
