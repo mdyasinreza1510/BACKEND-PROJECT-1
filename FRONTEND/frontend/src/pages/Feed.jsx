@@ -7,11 +7,22 @@ export const Feed = () => {
     const [posts,setpost]=useState([
         {
             _id:"1",
-            image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800",
-            caption:"hello",
+            image:"",
+            caption:"",
         
-        }
+        } 
     ]);
+
+
+    //ab jis bhi post ki id dlt keliye ayegi  wo id is link k sath jake req bheje gi aur post delete hogi
+async function deletepost(id){
+    axios.delete(`http://localhost:3000/deletepost/${id}`)
+    .then((res)=>{
+        console.log(res.data)
+    })
+}
+
+
 //axios frontend ko backend se connect krta hai
 useEffect(()=>{
     //yaha hmne localhost:3000 pr jo get api hai "getpost" uska data lee rhe hain backend se aur aur aur ye jo data hai wo sb hamare DB se save hain "
@@ -35,6 +46,10 @@ axios.get("http://localhost:3000/getPost")
                     <div key={post._id} className='post-card'>
                         <img src={post.image} alt={post.caption}  />
                         <p>{post.caption}</p>
+
+
+                        {/* yaha hmnse post ki id pass ki button k function me  */}
+                        <button onClick={()=>{deletepost(post._id)}}>Delete</button>
                     </div>
 
                 ))
