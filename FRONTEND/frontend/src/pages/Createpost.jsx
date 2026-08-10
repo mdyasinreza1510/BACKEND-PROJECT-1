@@ -26,7 +26,8 @@ export const Createpost = () => {
 
         <h1>Create Post</h1>
         <form onSubmit={handlesubmit}>
-            <input type="file" name="image" accept='image/*' />
+          <label htmlFor="image" className='upload-button'> Choose Image</label>
+            <input type="file" name="image" accept='image/*' hidden  id='image'/>
             <textarea type="text" name="caption" required placeholder='Add Caption' />
             <button type='submit'> Create</button>
         </form>

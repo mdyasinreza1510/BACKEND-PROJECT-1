@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/createPost' element={<Createpost/>}/>
+        <Route path='/' element={<Createpost/>}/>
         <Route path='/seePosts' element={<Feed/>}/>
       </Routes>
     </Router>

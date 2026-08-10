@@ -20,6 +20,7 @@ async function deletepost(id){
     .then((res)=>{
         console.log(res.data)
     })
+
 }
 
 
