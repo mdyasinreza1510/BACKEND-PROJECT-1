@@ -53,6 +53,15 @@ app.get('/getPost', async (req,res)=>{
 
 })
 
+app.delete('/deletepost/:id',async (req,res)=>{
+    const id= req.params.id
+    await postmodel.findByIdAndDelete(id)
+
+    res.status(200).json({
+        messege:"post deleted sucessfully"
+    })
+})
+
 
 
 
